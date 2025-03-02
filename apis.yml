@@ -1,31 +1,40 @@
 aid: crawlee
-name: Crawlee
-description: >-
-  Crawlee is a webscraping and browserautomation libraryCrawlee is a webscraping
-  and browserautomation library 
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2025-02-08'
-modified: '2025-02-08'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/crawlee/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
   - aid: crawlee:crawlee
     name: Crawlee
+    tags:
+      - API
+    humanURL: ' https://crawlee.dev/'
+    properties:
+      - url: ' https://crawlee.dev/'
+        type: Documentation
     description: >-
       Crawlee is a webscraping and browserautomation libraryCrawlee is a
       webscraping and browserautomation library 
-    humanURL: ' https://crawlee.dev/'
-    tags:
-      - API
-    properties:
-      - type: Documentation
-        url: ' https://crawlee.dev/'
+name: Crawlee
+tags:
+  - Crawlers
+  - Search
+  - Harvesting
+  - Web
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2025-02-08'
+modified: '2025-03-01'
+position: Consumer
+description: >-
+  Crawlee is a web crawling tool designed to search and index content from
+  websites across the internet. It scans through websites, collecting data such
+  as text, images, links, and metadata to build a comprehensive database of
+  information. The tool is commonly used by search engines to gather and
+  organize data for users to access quickly and efficiently. Crawlee plays a
+  vital role in keeping search engine results up-to-date and relevant, making it
+  an essential tool for any website looking to increase visibility and reach
+  online.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'

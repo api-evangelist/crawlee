@@ -9,9 +9,9 @@ apis:
       - Search
       - Harvesting
       - Web
-    humanURL: ' https://crawlee.dev/'
+    humanURL: https://crawlee.dev/
     properties:
-      - url: ' https://crawlee.dev/'
+      - url: https://crawlee.dev/
         type: Documentation
     description: >-
       Crawlee is a web scraping tool that efficiently collects data from various
@@ -33,7 +33,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-02-08'
-modified: '2025-03-01'
+modified: '2026-03-16'
 position: Consumer
 description: >-
   Crawlee is a web crawling tool designed to search and index content from
@@ -46,5 +46,5 @@ description: >-
   online.
 maintainers:
   - FN: Kin Lane
-    email: info@apievangelist.com
+    email: kin@apievangelist.com
 specificationVersion: '0.19'

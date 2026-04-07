@@ -6,8 +6,8 @@ apis:
     name: Crawlee
     tags:
       - Crawlers
-      - Search
       - Harvesting
+      - Search
       - Web
     humanURL: https://crawlee.dev/
     properties:
@@ -23,8 +23,8 @@ apis:
 name: Crawlee
 tags:
   - Crawlers
-  - Search
   - Harvesting
+  - Search
   - Web
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg

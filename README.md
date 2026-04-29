@@ -1,42 +1,52 @@
 # Crawlee (crawlee)
-Crawlee is a web crawling tool designed to search and index content from websites across the internet. It scans through websites, collecting data such as text, images, links, and metadata to build a comprehensive database of information. The tool is commonly used by search engines to gather and organize data for users to access quickly and efficiently. Crawlee plays a vital role in keeping search engine results up-to-date and relevant, making it an essential tool for any website looking to increase visibility and reach online.
+
+Crawlee is an open-source web scraping and crawling library maintained by Apify, providing a unified set of crawler classes, request queues, datasets, and key-value stores for building reliable scrapers. It is available for both JavaScript/TypeScript (Node.js) and Python, offering HTTP, Cheerio, JSDOM, LinkeDOM, Puppeteer, Playwright, and Stagehand crawler implementations along with proxy and session management utilities for production-grade scraping.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/crawlee/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Provider
+- **Access:** Public
+- **x-type:** opensource
 
-## Tags:
+## Tags
 
- - Crawlers, Search, Harvesting, Web
+- Apache 2.0, Apify, Browser Automation, Crawlers, Harvesting, JavaScript, Node.js, Open Source, Playwright, Puppeteer, Python, Scraping, Web
 
 ## Timestamps
 
-- **Created:** 2025-02-08 
-- **Modified:** 2025-03-01 
+- **Created:** 2025-02-08
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Crawlee
-Crawlee is a web scraping tool that efficiently collects data from various websites and platforms. It uses intelligent algorithms to navigate through web pages, extracting specific information such as product prices, customer reviews, and contact details. Crawlee can be customized to scrape data from different sources and deliver it in a structured format for businesses to analyze and make informed decisions. With its user-friendly interface and advanced features, Crawlee simplifies the process of web scraping, saving time and resources for companies looking to gather valuable insights from the vast expanse of online data.
+### Crawlee JavaScript SDK
 
-**Human URL:** [ https://crawlee.dev/]( https://crawlee.dev/)
+A Node.js/TypeScript library that provides BasicCrawler, HttpCrawler, CheerioCrawler, JSDOMCrawler, LinkeDOMCrawler, PuppeteerCrawler, PlaywrightCrawler, and AdaptivePlaywrightCrawler with shared autoscaling, proxy, session, queue, and dataset infrastructure.
 
+- [Documentation](https://crawlee.dev/js)
+- [Reference](https://crawlee.dev/js/api)
+- [GitHub](https://github.com/apify/crawlee)
 
-#### Tags:
+### Crawlee Python SDK
 
- - Crawlers, Search, Harvesting, Web
+A Python asyncio-based scraping library offering BasicCrawler, HttpCrawler, BeautifulSoupCrawler, ParselCrawler, PlaywrightCrawler, and adaptive crawlers with the same storage and orchestration model as the JavaScript SDK.
 
-#### Properties
+- [Documentation](https://crawlee.dev/python)
+- [Reference](https://crawlee.dev/python/api)
+- [GitHub](https://github.com/apify/crawlee-python)
 
-- [Documentation]( https://crawlee.dev/)
+## Common Properties
+
+- [Website](https://crawlee.dev/)
+- [GitHub Organization](https://github.com/apify)
+- [Blog](https://crawlee.dev/blog)
+- [Discord](https://discord.gg/jyEM2PRvMU)
+- [License](https://github.com/apify/crawlee/blob/master/LICENSE.md)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com

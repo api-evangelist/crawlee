@@ -1,0 +1,13 @@
+{
+  "repo": "crawlee",
+  "feeds": [
+    {
+      "source": "https://crawlee.dev/blog",
+      "feed_url": "https://crawlee.dev/blog/rss.xml",
+      "saved": 10,
+      "title": "Crawlee for JavaScript \u00b7 Build reliable crawlers. Fast. Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:26:22Z"
+}

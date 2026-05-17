@@ -1,6 +1,6 @@
 aid: crawlee
 name: Crawlee
-x-type: opensource
+kind: opensource
 description: >-
   Crawlee is an open-source web scraping and crawling library maintained by
   Apify, providing a unified set of crawler classes, request queues,

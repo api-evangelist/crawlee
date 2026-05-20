@@ -98,6 +98,8 @@ apis:
       - Python
       - Scraping
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/apify
   - type: Website
     url: https://crawlee.dev/
   - type: Documentation

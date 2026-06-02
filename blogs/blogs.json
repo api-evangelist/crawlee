@@ -2,12 +2,20 @@
   "repo": "crawlee",
   "feeds": [
     {
-      "source": "https://crawlee.dev/blog",
+      "source": "https://crawlee.dev/blog/rss/",
       "feed_url": "https://crawlee.dev/blog/rss/",
-      "title": "Crawlee for JavaScript \u00b7 Build reliable crawlers. Fast. Blog",
-      "saved": 13
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://github.com/apify/crawlee",
+      "feed_url": "https://github.com/apify/crawlee",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 23,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }

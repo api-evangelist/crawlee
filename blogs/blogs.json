@@ -2,8 +2,8 @@
   "repo": "crawlee",
   "feeds": [
     {
-      "source": "https://crawlee.dev/blog/rss/",
-      "feed_url": "https://crawlee.dev/blog/rss/",
+      "source": "https://crawlee.dev/blog/rss.xml",
+      "feed_url": "https://crawlee.dev/blog/rss.xml",
       "title": "",
       "saved": 0,
       "method": "feed"
@@ -16,6 +16,6 @@
       "method": "none"
     }
   ],
-  "post_count": 23,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 24,
+  "fetched": "2026-06-27T12:03:07Z"
 }

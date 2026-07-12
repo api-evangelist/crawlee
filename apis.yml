@@ -98,6 +98,8 @@ apis:
       - Python
       - Scraping
 common:
+  - type: DomainSecurity
+    url: security/crawlee-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/apify
   - type: Website

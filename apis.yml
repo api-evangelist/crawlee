@@ -110,6 +110,10 @@ apis:
       - Python
       - Scraping
 common:
+  - type: IssueTracker
+    url: https://github.com/apify/crawlee/issues
+  - type: ContributionGuide
+    url: https://github.com/apify/crawlee/blob/master/CONTRIBUTING.md
   - type: DomainSecurity
     url: security/crawlee-domain-security.yml
   - type: LinkedIn

@@ -31,6 +31,20 @@ tags:
   - Harvesting
   - JavaScript
   - Node.js
+  - Open-Source
+  - Playwright
+  - Puppeteer
+  - Python
+  - Scraping
+  - Web
+tags_raw:
+  - Apache 2.0
+  - Apify
+  - Browser Automation
+  - Crawlers
+  - Harvesting
+  - JavaScript
+  - Node.js
   - Open Source
   - Playwright
   - Puppeteer
@@ -102,6 +116,14 @@ apis:
       - type: PyPiPackage
         url: https://pypi.org/project/crawlee/
     tags:
+      - Async I/O
+      - BeautifulSoup
+      - Browser Automation
+      - Parsel
+      - Playwright
+      - Python
+      - Scraping
+    tags_raw:
       - Asyncio
       - BeautifulSoup
       - Browser Automation

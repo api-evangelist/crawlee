@@ -127,7 +127,7 @@ apis:
       - type: PyPiPackage
         url: https://pypi.org/project/crawlee/
     tags:
-      - Async I/O
+      - Asyncio
       - BeautifulSoup
       - Browser Automation
       - Parsel

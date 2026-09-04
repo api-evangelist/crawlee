@@ -67,7 +67,7 @@ modified: '2026-04-28'
 specificationVersion: '0.23'
 type: Index
 access: Public
-position: Provider
+position: Producing
 apis:
   - aid: crawlee:crawlee-javascript-sdk
     name: Crawlee JavaScript SDK

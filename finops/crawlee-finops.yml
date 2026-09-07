@@ -9,152 +9,68 @@ alignedWith:
 provider: Crawlee
 providerId: crawlee
 publisherName: Crawlee
-serviceCategory: API
+serviceCategory: Open Source Library
+generated: '2026-09-07'
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+method: searched
+source: >-
+  https://crawlee.dev/ (200), https://github.com/apify/crawlee/blob/master/LICENSE.md (200),
+  https://registry.npmjs.org/crawlee (200, Apache-2.0), https://pypi.org/pypi/crawlee/json (200)
 tags:
   - Apache 2.0
   - Apify
-  - Browser Automation
-  - Crawlers
-  - Harvesting
-  - JavaScript
-  - Node.js
   - Open Source
-  - Playwright
-  - Puppeteer
-  - Python
-  - Scraping
-  - Web
   - FinOps
   - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Crawlee API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: >-
+  Crawlee is billable to nobody. It is an Apache-2.0 library distributed free from npm and
+  PyPI; there is no invoice, no meter, no billing currency and no chargeable unit, because
+  no service runs on the consumer's behalf. The FinOps question that IS real for a Crawlee
+  adopter is the cost of the infrastructure THEY run it on — that cost belongs to their own
+  cloud provider, not to Crawlee, and is recorded here as guidance rather than as a
+  Crawlee charge model.
+billable: false
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
-  billingCurrency: USD
-  chargeCategories:
-    - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
-focusColumns:
-  ServiceName: Crawlee
-  ServiceCategory: Developer Tools / API
-  ProviderName: Crawlee
-  PublisherName: Crawlee
-  InvoiceIssuerName: Crawlee
-  PricingCategory: Usage-Based
-  PricingUnit: request
-  BillingCurrency: USD
-  ChargeCategory: Usage
-meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Crawlee JavaScript SDK
-    baseURL: ''
-    tags:
-      - Browser Automation
-      - Cheerio
-      - JavaScript
-      - Node.js
-      - Playwright
-      - Puppeteer
-      - Scraping
-      - TypeScript
-    serviceName: Crawlee JavaScript SDK
-    serviceCategory: API
-  - name: Crawlee Python SDK
-    baseURL: ''
-    tags:
-      - Asyncio
-      - BeautifulSoup
-      - Browser Automation
-      - Parsel
-      - Playwright
-      - Python
-      - Scraping
-    serviceName: Crawlee Python SDK
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  pricingCategory: None — free and open source
+  billingFrequency: null
+  billingCurrency: null
+  chargeCategories: []
+  note: Apache-2.0. No charge of any kind is levied by the provider.
+meters: []
+unitEconomics: []
+consumer_side_cost_drivers:
+  note: >-
+    Not charges from Crawlee. These are the consumer's own infrastructure costs, listed
+    because they are what a FinOps practice would actually track for a Crawlee workload.
+  drivers:
+    - name: compute
+      detail: >-
+        Browser-based crawlers (PlaywrightCrawler, PuppeteerCrawler) are materially more
+        expensive per page than HTTP crawlers (HttpCrawler, CheerioCrawler, ParselCrawler).
+        AdaptivePlaywrightCrawler exists specifically to detect when a browser is not
+        needed, which is a cost lever the library gives the consumer.
+    - name: memory
+      detail: >-
+        AutoscaledPool scales concurrency against max_used_cpu_ratio and
+        max_used_memory_ratio, so instance sizing determines throughput directly.
+    - name: proxy bandwidth
+      detail: >-
+        ProxyConfiguration rotates third-party proxies. Proxy spend is billed by whichever
+        proxy vendor the consumer chooses and is usually the largest line item in a
+        production crawl.
+    - name: storage
+      detail: >-
+        Dataset, KeyValueStore and RequestQueue persist through a storage client the
+        consumer selects — filesystem, memory, Redis, or SQL (MySQL, PostgreSQL, SQLite).
+        Cost follows that choice.
+note: >-
+  SUPERSEDES A FABRICATED ARTIFACT. Until this pass, this file declared a Usage-Based
+  pricing category, monthly billing in USD, an invoice issuer named "Crawlee", a "request"
+  pricing unit and three meters (api_requests, data_egress, compute_seconds) with
+  cost-per-1K-request unit economics — written by the 2026-05-04 bulk sweep. Crawlee bills
+  nothing and issues no invoice; the whole billing model was scaffold. Apify's hosted
+  platform does have a real FinOps profile, and it belongs to the Apify provider record.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

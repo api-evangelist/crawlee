@@ -1,0 +1,82 @@
+generated: '2026-09-07'
+method: probed
+source: >-
+  Direct HTTPS probes of the named /.well-known/ path list on every host this record knows.
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Well-known discovery probe for Crawlee. Every named path was requested with a browser
+  User-Agent on 2026-09-07. NOTHING was served: crawlee.dev is a Docusaurus documentation
+  site whose 404 handler returns a 17,809-byte HTML shell for every unknown path, and
+  www.crawlee.dev 301-redirects to the apex. No pointer of type WellKnown or SecurityTxt
+  is emitted from this file, because a recorded absence is not a presence.
+hosts:
+  - host: crawlee.dev
+    role: project site and documentation host (Docusaurus)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+  - host: www.crawlee.dev
+    role: www alias
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 301
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+        file: null
+      - path: /.well-known/api-catalog
+        status: 301
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 301
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 301
+        file: null
+      - path: /.well-known/agent.json
+        status: 301
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 301
+        file: null
+notes:
+  - >-
+    No API baseURL host exists to probe. Crawlee ships two libraries and operates no
+    callable HTTP service, so there is no API host and no OpenAPI servers[] host beyond
+    the documentation site.
+  - >-
+    crawlee.dev DOES serve two non-well-known machine-readable documents that were found in
+    the same sweep: /robots.txt (200, naming two sitemaps) and /llms.txt (200, text/markdown,
+    30,281 bytes — saved verbatim to llms/crawlee-llms.txt). Neither lives under /.well-known/.
+  - >-
+    The 404 bodies are the Docusaurus SPA shell, identical in size across every path. They
+    were read, not just status-checked, so none of them is being mistaken for a document.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,66 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://github.com/apify/crawlee-python/blob/master/AGENTS.md (a symlink to .rules.md)
+  and https://github.com/apify/crawlee/blob/master/.claude/CLAUDE.md
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Crawlee publishes agent operating instructions in its own repositories, and both files
+  here are those documents saved VERBATIM — nothing in this directory was authored on the
+  provider's behalf. Read the scope carefully before using them: these are
+  CONTRIBUTOR-TIME instructions that tell a coding agent how to work ON the Crawlee
+  codebase (build, test, lint, commit and PR conventions). They are not runtime skills for
+  calling a Crawlee API, because Crawlee has no API to call — it is a library the consumer
+  imports. No skill was generated for a marquee API flow, because there is no OpenAPI to
+  ground operationIds in and inventing one would fabricate operations that do not exist.
+scope: development-time
+skills:
+  - id: crawlee-python-agent-rules
+    file: crawlee-python-agent-rules.md
+    title: Crawlee for Python — coding guidelines for programming agents
+    method: searched
+    source: https://github.com/apify/crawlee-python/blob/master/.rules.md
+    published_as:
+      - AGENTS.md
+      - CLAUDE.md
+      - GEMINI.md
+      - .rules.md
+    note: >-
+      One file served under four names. AGENTS.md, CLAUDE.md and GEMINI.md at the repo root
+      are all 9-byte symlinks pointing at .rules.md, so every agent convention resolves to
+      the same document. It opens "This file provides guidance to programming agents when
+      working with code in this repository."
+    covers:
+      - uv + poe development commands (install-dev, check-code, lint, format, type-check, unit-tests, build)
+      - Ruff formatting rules, 120-char lines, single quotes, Google docstrings
+      - the `ty` type checker, targeting Python 3.10
+      - pytest-asyncio auto mode and the run_alone / xdist test split
+      - Conventional Commits, with which types trigger a release and a changelog entry
+    bytes: 5263
+  - id: crawlee-javascript-agent-rules
+    file: crawlee-javascript-agent-rules.md
+    title: Crawlee for JavaScript — CLAUDE.md guidance
+    method: searched
+    source: https://github.com/apify/crawlee/blob/master/.claude/CLAUDE.md
+    note: >-
+      Opens "This file provides guidance to Claude Code (claude.ai/code) when working with
+      code in this repository."
+    covers:
+      - keep changes minimal and scoped
+      - git commit-type conventions (chore / fix / feat)
+      - mandatory `yarn tsc-check-tests` before committing TypeScript
+      - do not delete assertions or type casts without verifying via the build
+      - write the failing test before the fix; no debug artifacts left in tests
+      - PR description conventions
+      - Yarn v4 via Corepack build and test commands
+    bytes: 3938
+not_generated:
+  reason: no-openapi
+  detail: >-
+    Steps that generate a packaged Agent Skill per marquee flow require real operationIds
+    from a published OpenAPI. Crawlee publishes no OpenAPI and operates no HTTP API, so no
+    skill was generated. See x-coverage in apis.yml.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

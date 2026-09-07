@@ -1,0 +1,51 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  Searched for a first-party Crawlee MCP server across crawlee.dev, the apify/crawlee and
+  apify/crawlee-python repositories, and the npm registry (registry.npmjs.org search for
+  "crawlee").
+provider: Crawlee
+providerId: crawlee
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+description: >-
+  Crawlee publishes no MCP server. It is a library a developer imports into their own
+  program, not a service an agent can call, so there is no endpoint to expose and no
+  OpenAPI operation set from which a candidate tool list could be derived. No MCPServer
+  pointer is emitted.
+findings:
+  - claim: The Apify MCP server at mcp.apify.com is NOT a Crawlee MCP server.
+    detail: >-
+      mcp.apify.com exposes Apify Actors on the Apify platform. It is published by Apify
+      (github.com/apify/apify-mcp-server, docs.apify.com/integrations/mcp) and belongs to
+      the Apify provider record, not to Crawlee. Apify maintains Crawlee, but the MCP
+      server wraps the Apify platform's Actor catalogue, not the Crawlee library. Attributing
+      it here would credit Crawlee with an agent surface it does not ship.
+    ownership_verdict: excluded
+  - claim: '@crawlee-cloud/cli and crawlee.cloud are not Crawlee properties.'
+    detail: >-
+      crawlee.cloud is a separate MIT-licensed project (GitHub org crawlee-cloud, created
+      2025-12-20) describing itself as a self-hosted platform for running Apify Actors. It
+      carries the Crawlee name but is not published by Apify or the Crawlee maintainers.
+    ownership_verdict: excluded
+  - claim: No MCP tooling ships inside the Crawlee packages.
+    detail: >-
+      An npm registry search for "crawlee" (40 results, 2026-09-07) returned no
+      first-party MCP package under crawlee or @crawlee/*. The @crawlee/* lockstep set at
+      3.18.1 is crawler classes, storage clients, HTTP clients, CLI and templates.
+    ownership_verdict: n/a
+probes:
+  - url: https://crawlee.dev/.well-known/ai-plugin.json
+    status: 404
+  - url: https://registry.npmjs.org/-/v1/search?text=crawlee&size=40
+    status: 200
+    result: no first-party MCP package
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

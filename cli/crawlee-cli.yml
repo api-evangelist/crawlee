@@ -1,0 +1,78 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://crawlee.dev/js/docs/quick-start,
+  https://crawlee.dev/python/docs/introduction/setting-up, and the @crawlee/cli npm
+  package metadata (registry.npmjs.org/@crawlee/cli)
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Crawlee ships one first-party CLI per language line. Both do the same job — scaffold a
+  new crawler project from a maintained template — and neither is a client for a remote
+  API. There is no login, no auth, and no server-side command surface, because Crawlee
+  operates no service.
+clis:
+  - name: crawlee (JavaScript)
+    binary: crawlee
+    package: '@crawlee/cli'
+    registry: npm
+    version: 3.18.1
+    published: '2026-08-12'
+    docs: https://crawlee.dev/js/docs/quick-start
+    install:
+      - method: npx
+        command: npx crawlee create my-crawler
+        note: The documented path — no global install required.
+      - method: npm
+        command: npm install -g @crawlee/cli
+    commands:
+      - command: crawlee create <project-name>
+        description: >-
+          Scaffold a new Crawlee project from a template in @crawlee/templates, with an
+          interactive prompt for the crawler type (Cheerio, Playwright, Puppeteer, …)
+          and language (JavaScript or TypeScript).
+        verbatim_example: npx crawlee create my-crawler
+    runtime_deps:
+      - yargs
+      - inquirer
+      - fs-extra
+      - yargonaut
+      - ansi-colors
+      - '@crawlee/templates'
+    after_scaffold:
+      - command: cd my-crawler && npm start
+        description: Runs the generated project. Quoted verbatim from the quick-start guide.
+  - name: crawlee (Python)
+    binary: crawlee
+    package: crawlee
+    extra: cli
+    registry: pypi
+    version: 1.10.0
+    published: '2026-08-31'
+    docs: https://crawlee.dev/python/docs/introduction/setting-up
+    install:
+      - method: uvx
+        command: uvx 'crawlee[cli]' create my-crawler
+        note: >-
+          The documented path. CLI/template dependencies were moved into an optional
+          `cli` extra in Crawlee for Python v0.6, so the base install has no CLI.
+      - method: pip
+        command: python -m pip install 'crawlee[cli]'
+    commands:
+      - command: crawlee create <project-name>
+        description: >-
+          Scaffold a new Crawlee for Python project, prompting for the crawler type
+          (BeautifulSoup, Parsel, Playwright, …).
+        verbatim_example: crawlee create my_crawler
+    after_scaffold:
+      - command: python -m <project-name>
+        description: Runs the generated project.
+notes:
+  - >-
+    `@crawlee-cloud/cli` (binaries `crawlee-cloud` / `crc`, npm v1.6.0, 2026-08-05) is NOT
+    listed here. It belongs to crawlee.cloud / github.com/crawlee-cloud, a separate
+    MIT-licensed self-hosted Apify-Actor runner, not to Apify's Crawlee. See
+    packages/crawlee-packages.yml `not_first_party`.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

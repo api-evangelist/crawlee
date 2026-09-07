@@ -63,7 +63,7 @@ tags_raw:
   - Scraping
   - Web
 created: '2025-02-08'
-modified: '2026-04-28'
+modified: '2026-09-07'
 specificationVersion: '0.23'
 type: Index
 access: Public
@@ -166,11 +166,38 @@ common:
   - type: Discord
     url: https://discord.gg/jyEM2PRvMU
   - type: Community
-    url: https://crawlee.dev/discord
+    url: https://discord.gg/jyEM2PRvMU
   - type: License
     url: https://github.com/apify/crawlee/blob/master/LICENSE.md
   - type: Apify
     url: https://apify.com/
+  - type: DeveloperPortal
+    url: https://crawlee.dev/
+  - type: LLMsTxt
+    url: llms/crawlee-llms.txt
+  - type: Packages
+    url: packages/crawlee-packages.yml
+  - type: SDKs
+    url: packages/crawlee-packages.yml
+  - type: CLI
+    url: cli/crawlee-cli.yml
+  - type: ChangeLog
+    url: changelog/crawlee-changelog.yml
+  - type: Lifecycle
+    url: lifecycle/crawlee-lifecycle.yml
+  - type: Deprecation
+    url: lifecycle/crawlee-lifecycle.yml
+  - type: Conventions
+    url: conventions/crawlee-conventions.yml
+  - type: Conformance
+    url: conformance/crawlee-conformance.yml
+  - type: AgentSkill
+    url: skills/_index.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-07'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v3

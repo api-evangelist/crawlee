@@ -1,0 +1,94 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://github.com/apify/crawlee/blob/master/RELEASE.md,
+  https://github.com/apify/crawlee/blob/master/MIGRATIONS.md,
+  https://crawlee.dev/js/docs/upgrading/upgrading-to-v3,
+  https://crawlee.dev/js/docs/next/upgrading/upgrading-to-v4,
+  https://crawlee.dev/python/docs/upgrading, and the published release records of both repos
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Versioning, release, maintenance and deprecation posture for the two Crawlee libraries.
+  Crawlee operates no hosted service, so there is deliberately no SLA, no uptime
+  commitment and no status page — those fields are recorded as not-applicable rather than
+  as gaps.
+versioning:
+  scheme: semver
+  surface: package version
+  javascript_current: 3.18.1
+  javascript_next_major: 4.0.0 (release candidate 4.0.0-rc.0, 2026-08-13)
+  python_current: 1.10.0
+  policy_doc: https://github.com/apify/crawlee/blob/master/RELEASE.md
+  policy_summary: >-
+    Two concurrent release lines for JavaScript. v4 development happens on `master` and
+    v3 maintenance on the `3.x` branch. Stable releases are cut manually via a
+    workflow_dispatch on the branch being released; lerna bumps the version, generates the
+    conventional-commits changelog, creates the GitHub release and git tag, pins internal
+    dependency versions and publishes. Release candidates for the next major publish from
+    `master` under the `rc` dist-tag.
+  dist_tags:
+    latest: stable — 3.18.1 today, becomes 4.0.0 when the major ships
+    latest-v3: reserved for v3 maintenance once 4.0.0 is stable
+    rc: release candidates for the next major (4.0.0-rc.N)
+    next: canary from the 3.x branch today, becomes the master canary once 4.0.0 is stable
+    next-v3: reserved for the 3.x canary once 4.0.0 is stable
+  canary_releases: >-
+    Every non-docs push to `master` or `3.x` that does not say [skip ci] publishes a
+    canary build under the branch's canary dist-tag. No commit or git tag is created.
+maintenance:
+  policy: >-
+    A maintenance branch is kept for the previous major. `3.x` continues to receive patch
+    and minor releases while v4 is developed on master, and gets its own stable dist-tag
+    (`latest-v3`) once 4.0.0 ships.
+  documented_at: https://github.com/apify/crawlee/blob/master/RELEASE.md
+  docs_versioning: >-
+    Minor and major releases from master snapshot the docs into Docusaurus versioned_docs,
+    so a consumer pinned to an older major still has a matching reference. The 3.18 docs
+    live in the version-3.18 snapshot.
+deprecation:
+  policy_present: true
+  mechanism: major-version migration guides
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  note: >-
+    Crawlee is a library, so deprecation is communicated in code and docs rather than over
+    HTTP. There are no Sunset or Deprecation response headers to emit because there is no
+    server. Breaking changes are gathered into a numbered major and shipped with a
+    dedicated upgrade guide, and deprecated APIs are marked in the TypeScript/Python
+    signatures and listed in the conventional-commits changelog before removal.
+  migration_guides:
+    - version: v4
+      url: https://crawlee.dev/js/docs/next/upgrading/upgrading-to-v4
+      status: published ahead of the stable 4.0.0 release
+    - version: v3
+      url: https://crawlee.dev/js/docs/upgrading/upgrading-to-v3
+    - line: python
+      url: https://crawlee.dev/python/docs/upgrading
+  migrations_file: https://github.com/apify/crawlee/blob/master/MIGRATIONS.md
+support:
+  runtime_floor_javascript: 'node >=16.0.0 (npm engines field on crawlee@3.18.1)'
+  runtime_floor_python: '>=3.10 (PyPI requires_python on crawlee 1.10.0)'
+  channels:
+    - type: issue-tracker
+      url: https://github.com/apify/crawlee/issues
+    - type: issue-tracker
+      url: https://github.com/apify/crawlee-python/issues
+    - type: discord
+      url: https://discord.gg/jyEM2PRvMU
+status_page:
+  present: false
+  applicable: false
+  note: >-
+    No status page exists and none should. Crawlee runs no service on a consumer's behalf —
+    the code executes in the consumer's own process — so there is no uptime to report. No
+    StatusPage pointer is emitted.
+sla:
+  present: false
+  applicable: false
+  note: Apache-2.0 open source, provided as-is. No availability or support SLA.
+deprecated_operations: []
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -3,103 +3,57 @@ specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
 provider: Crawlee
 providerId: crawlee
+generated: '2026-09-07'
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-09-07'
+method: searched
+source: >-
+  https://crawlee.dev/js (200), https://crawlee.dev/python (200),
+  https://crawlee.dev/python/docs/guides/scaling-crawlers (200),
+  https://crawlee.dev/python/api/class/RobotsTxtFile (200)
+limit_count: 0
 tags:
   - Apache 2.0
   - Apify
-  - Browser Automation
-  - Crawlers
-  - Harvesting
-  - JavaScript
-  - Node.js
   - Open Source
-  - Playwright
-  - Puppeteer
-  - Python
   - Scraping
   - Web
-  - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Crawlee API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
-limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Crawlee JavaScript SDK
-      - Crawlee Python SDK
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Crawlee JavaScript SDK
-      - Crawlee Python SDK
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Crawlee JavaScript SDK
-      - Crawlee Python SDK
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Crawlee JavaScript SDK
-      - Crawlee Python SDK
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Crawlee JavaScript SDK
-      - Crawlee Python SDK
-policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+description: >-
+  Crawlee publishes no rate limits, returns no rate-limit headers, and has no 429 to
+  return, because it answers no requests. It is a library running inside the consumer's own
+  process. An honest zero, not a documentation gap.
+headers: {}
+responseCodes: {}
+limits: []
+note: >-
+  SUPERSEDES A FABRICATED ARTIFACT. Until this pass, this file declared five invented
+  limits — 10 req/min and 1,000/month on a "free tier", 100 req/min and 100,000/month on a
+  "professional tier", 1,000 req/min on an "enterprise contract" — plus a full
+  X-RateLimit-* header set and a 429 exhaustion code, all written by the 2026-05-04 bulk
+  sweep and self-declared as "scaffold values". Crawlee serves no HTTP traffic, so none of
+  those headers has anywhere to appear. The scaffold has been removed.
+throttling_crawlee_applies_outbound:
+  note: >-
+    Crawlee sits on the OTHER side of rate limiting — it is the client being limited, and
+    it publishes real, documented mechanisms for behaving well. These are recorded for
+    completeness and are NOT limits imposed on a consumer of a Crawlee API.
+  mechanisms:
+    - name: robots.txt crawl-delay
+      detail: >-
+        RobotsTxtFile.get_crawl_delay() reads and honours the crawl-delay directive
+        published by the target site.
+      source: https://crawlee.dev/python/api/class/RobotsTxtFile
+    - name: AutoscaledPool
+      detail: >-
+        Concurrency is scaled against local CPU and memory headroom rather than a fixed
+        ceiling, bounded by max_used_cpu_ratio and max_used_memory_ratio (out-of-range
+        values have been rejected since Crawlee for Python 1.8.2).
+      source: https://crawlee.dev/python/docs/guides/scaling-crawlers
+    - name: max_session_rotations
+      detail: >-
+        "Maximum number of session rotations per request. The crawler rotates the session
+        if a proxy error occurs or if the website blocks the request."
+      source: https://crawlee.dev/python/api/class/BasicCrawlerOptions
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

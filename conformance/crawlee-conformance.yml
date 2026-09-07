@@ -1,0 +1,118 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://crawlee.dev/python/api (class index via https://crawlee.dev/llms.txt),
+  https://crawlee.dev/python/api/class/RobotsTxtFile, https://pypi.org/pypi/crawlee/json,
+  https://github.com/apify/crawlee/blob/master/RELEASE.md and the repository licence files
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Standards conformance for Crawlee. Read this in the right direction: Crawlee is a
+  crawler library, so the standards it conforms to are the ones it SPEAKS AS A CLIENT
+  against the open web — the Robots Exclusion Protocol and the Sitemaps XML protocol —
+  plus the release and packaging conventions it publishes under. Crawlee exposes no HTTP
+  API of its own, so every server-side standard (OAuth2, OIDC, RFC 9457, JSON:API, OData,
+  pagination, idempotency, FAPI, SCIM, PSD2) is recorded as not-applicable rather than as
+  a failure. No certifications, audits or compliance programme are published, so no
+  Compliance pointer is emitted.
+conformance:
+  - id: robots-exclusion-protocol
+    name: Robots Exclusion Protocol (robots.txt)
+    conforms: true
+    role: client
+    evidence: https://crawlee.dev/python/api/class/RobotsTxtFile
+    detail: >-
+      The RobotsTxtFile class implements robots.txt fetching and evaluation with load(),
+      find(), from_content(), is_allowed(), get_crawl_delay(), get_sitemaps(),
+      parse_sitemaps() and parse_urls_from_sitemaps(). The equivalent surface exists in the
+      JavaScript library. Crawlee therefore both parses the directive set and honours
+      crawl-delay.
+    note: >-
+      The published reference does not cite RFC 9309 by name. Conformance is asserted from
+      the implemented method surface, not from a standards claim on a marketing page.
+  - id: sitemaps-protocol
+    name: Sitemaps XML protocol (sitemaps.org 0.9)
+    conforms: true
+    role: client
+    evidence: https://crawlee.dev/python/api/class/Sitemap
+    detail: >-
+      Sitemap, NestedSitemap, SitemapRequestLoader, ParseSitemapOptions, _XmlSitemapParser,
+      _TxtSitemapParser and _XMLSaxSitemapHandler implement XML sitemap and sitemap-index
+      parsing, plain-text sitemap parsing, and sitemap-driven request enqueueing. The
+      2026-06-04 v3.17.0 release added network timeouts to discoverValidSitemaps on the
+      JavaScript side.
+  - id: opentelemetry
+    name: OpenTelemetry instrumentation
+    conforms: true
+    role: emitter
+    evidence: https://pypi.org/pypi/crawlee/json
+    detail: >-
+      Crawlee for Python publishes an `otel` optional extra, declared in the PyPI
+      provides_extra list for 1.10.0, wiring OpenTelemetry instrumentation into the crawler
+      runtime.
+  - id: semver
+    name: Semantic Versioning 2.0.0
+    conforms: true
+    role: publisher
+    evidence: https://github.com/apify/crawlee/blob/master/RELEASE.md
+    detail: >-
+      Both lines version under semver with explicit major/minor/patch bump semantics,
+      pre-release identifiers (4.0.0-rc.0, 4.0.0-beta.162) and a maintenance branch for the
+      previous major.
+  - id: conventional-commits
+    name: Conventional Commits 1.0.0
+    conforms: true
+    role: publisher
+    evidence: https://github.com/apify/crawlee-python/blob/master/.rules.md
+    detail: >-
+      The published contributor rules mandate Conventional Commits and enumerate which
+      types trigger a release and a changelog entry (feat/fix/perf/refactor/style) versus
+      which do not (test/docs/ci/chore/build). The changelog is generated from them.
+  - id: spdx-apache-2.0
+    name: Apache License 2.0 (SPDX Apache-2.0)
+    conforms: true
+    role: publisher
+    evidence: https://github.com/apify/crawlee/blob/master/LICENSE.md
+    detail: >-
+      Both apify/crawlee and apify/crawlee-python are Apache-2.0, and the npm `crawlee`
+      package metadata carries the Apache-2.0 SPDX identifier.
+not_applicable:
+  - id: oauth2
+    reason: Crawlee exposes no API and issues no tokens.
+  - id: oidc
+    reason: No identity surface.
+  - id: rfc9457
+    reason: No HTTP error responses of its own — errors are language-level exception classes.
+  - id: json-api
+    reason: No HTTP resource representation.
+  - id: odata
+    reason: No query surface.
+  - id: pagination
+    reason: No HTTP collection endpoints.
+  - id: idempotency
+    reason: No mutating HTTP surface. See conventions/crawlee-conventions.yml.
+  - id: fapi
+    reason: Not a financial API.
+  - id: scim
+    reason: No identity provisioning surface.
+  - id: psd2
+    reason: Not a payments provider.
+domain_standard:
+  market: web crawling and scraping
+  standards_probed:
+    - robots-exclusion-protocol
+    - sitemaps-protocol
+  verdict: >-
+    Both of the standards that actually govern this market are implemented and are
+    load-bearing in the product, not decorative: robots.txt evaluation and sitemap parsing
+    are first-class classes in the public API of both language lines.
+certifications: []
+compliance_programme:
+  present: false
+  note: >-
+    No SOC 2, ISO 27001, PCI, HIPAA or FedRAMP claim, and no trust centre. Probed
+    2026-09-07 via probe-security-programs.py, which returned vdp=none trust=none. Correct
+    for an Apache-2.0 library with no hosted service.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

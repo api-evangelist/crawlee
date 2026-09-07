@@ -1,0 +1,133 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  https://github.com/apify/crawlee/releases, https://github.com/apify/crawlee-python/releases
+  (read via api.github.com/repos/<repo>/releases on 2026-09-07) and
+  https://crawlee.dev/python/docs/changelog
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Crawlee keeps two independently-versioned changelogs, one per language line, both
+  generated from Conventional Commits by the release automation. Every entry below was
+  read from the published GitHub release records; nothing is summarised from memory.
+scheme: semver
+release_automation:
+  javascript: lerna version with conventional-commits changelog generation (RELEASE.md)
+  python: release workflow generating a Keep-a-Changelog-style CHANGELOG.md
+lines:
+  - line: javascript
+    repository: https://github.com/apify/crawlee
+    changelog_file: https://github.com/apify/crawlee/blob/master/CHANGELOG.md
+    releases_url: https://github.com/apify/crawlee/releases
+    current_version: 3.18.1
+    current_released: '2026-08-12'
+    prerelease_version: 4.0.0-rc.0
+    prerelease_released: '2026-08-13'
+    dist_tags:
+      latest: 3.18.1
+      rc: 4.0.0-rc.0
+      v4: 4.0.0-beta.162
+      next: 3.18.2-beta.4
+    entries:
+      - version: 4.0.0-rc.0
+        date: '2026-08-13'
+        prerelease: true
+        breaking: true
+        highlights:
+          - First release candidate of the v4 major line, published from master under the `rc` dist-tag.
+          - >-
+            Migration guidance published at
+            https://crawlee.dev/js/docs/next/upgrading/upgrading-to-v4
+      - version: 3.18.1
+        date: '2026-08-12'
+        breaking: false
+        highlights:
+          - 'core: do not purge storages that are already in use (#3988)'
+      - version: 3.18.0
+        date: '2026-08-04'
+        breaking: false
+        highlights:
+          - 'allow any clickOptions in enqueueLinksByClickingElements (#3823)'
+      - version: 3.17.0
+        date: '2026-06-04'
+        breaking: false
+        highlights:
+          - add network timeouts to discoverValidSitemaps to prevent indefinite hangs
+      - version: 3.16.0
+        date: '2026-02-06'
+        breaking: false
+        highlights:
+          - StagehandCrawler — AI-powered crawling via the Stagehand integration.
+          - 'adaptive-crawler: fix persistence of rendering-type detection results.'
+      - version: 3.15.3
+        date: '2025-11-10'
+        breaking: false
+        highlights:
+          - 'await retries inside _timeoutAndRetry (#3206)'
+      - version: 3.15.2
+        date: '2025-10-23'
+        breaking: false
+        highlights:
+          - 'correctly apply launchOptions with useIncognitoPages (#3181)'
+      - version: 3.15.1
+        date: '2025-09-26'
+        breaking: false
+        highlights:
+          - 'use correct config for storage classes to avoid memory leaks (#3144)'
+  - line: python
+    repository: https://github.com/apify/crawlee-python
+    changelog_file: https://github.com/apify/crawlee-python/blob/master/CHANGELOG.md
+    changelog_docs: https://crawlee.dev/python/docs/changelog
+    releases_url: https://github.com/apify/crawlee-python/releases
+    current_version: 1.10.0
+    current_released: '2026-08-31'
+    entries:
+      - version: 1.10.0
+        date: '2026-08-31'
+        breaking: false
+        additions:
+          - 'httpx: build HttpxHttpClient on httpx2 instead of httpx (#2182)'
+      - version: 1.9.3
+        date: '2026-08-24'
+        breaking: false
+        highlights:
+          - 'sitemaps: allow Sitemap.from_xml_string to opt into enqueue host filtering'
+      - version: 1.9.2
+        date: '2026-08-17'
+        breaking: false
+        highlights:
+          - 'sitemap: guard the unavailable ExpatParser.flush on older CPython builds'
+      - version: 1.9.1
+        date: '2026-08-06'
+        breaking: false
+        highlights:
+          - 'fingerprints: enforce the user-agent allow list so screen constraints apply'
+      - version: 1.9.0
+        date: '2026-08-03'
+        breaking: false
+        additions:
+          - 'FileDownloadCrawler for downloading and streaming files (#2043)'
+      - version: 1.8.3
+        date: '2026-07-20'
+        breaking: false
+        highlights:
+          - 'fingerprint: keep the original error as the cause when generation fails'
+      - version: 1.8.2
+        date: '2026-07-13'
+        breaking: false
+        highlights:
+          - 'configuration: reject out-of-range max_used_cpu_ratio and max_used_memory'
+      - version: 1.8.1
+        date: '2026-07-08'
+        breaking: false
+        highlights:
+          - 'keep named request queues across runs (#2015)'
+cadence:
+  javascript: >-
+    Roughly monthly minors with same-week patches; canary builds published on every
+    qualifying push to master and 3.x.
+  python: >-
+    Weekly-to-fortnightly patch and minor releases through July and August 2026.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

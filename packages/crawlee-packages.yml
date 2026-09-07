@@ -1,0 +1,292 @@
+generated: '2026-09-07'
+method: searched
+source: >-
+  registry.npmjs.org and pypi.org metadata endpoints, plus the first-party install
+  instructions at https://crawlee.dev/js/docs/quick-start and
+  https://crawlee.dev/python/docs/quick-start
+provider: Crawlee
+providerId: crawlee
+description: >-
+  Crawlee is distributed as a library, not as a client for a hosted API. Every package
+  below is published by the Crawlee maintainers (Apify) from the apify/crawlee and
+  apify/crawlee-python monorepos, and every one of them IS the product rather than an
+  SDK wrapping a remote service. Versions and publish dates were read from the public
+  registry metadata endpoints on 2026-09-07.
+note: >-
+  The JavaScript monorepo publishes ~20 packages that all share a single lockstep version
+  (lerna fixed-mode), so the full @crawlee/* set is represented here by the umbrella
+  package plus the crawler-implementation and infrastructure packages a consumer actually
+  installs. Two release lines are live: 3.18.x on the `latest` dist-tag and a 4.0.0
+  release-candidate line on the `rc` dist-tag (see lifecycle/crawlee-lifecycle.yml).
+packages:
+  - name: crawlee
+    registry: npm
+    url: https://www.npmjs.com/package/crawlee
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    install: npm install crawlee
+    description: >-
+      Umbrella package re-exporting the whole JavaScript crawler surface — BasicCrawler,
+      HttpCrawler, CheerioCrawler, JSDOMCrawler, LinkeDOMCrawler, PuppeteerCrawler,
+      PlaywrightCrawler and AdaptivePlaywrightCrawler — plus RequestQueue, Dataset,
+      KeyValueStore, SessionPool, ProxyConfiguration and AutoscaledPool.
+    source: https://registry.npmjs.org/crawlee
+  - name: '@crawlee/core'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/core
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: Core runtime — request queues, storages, autoscaling, statistics, session and proxy handling.
+    source: https://registry.npmjs.org/@crawlee/core
+  - name: '@crawlee/basic'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/basic
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: BasicCrawler — the request-handling loop every other crawler class extends.
+    source: https://registry.npmjs.org/@crawlee/basic
+  - name: '@crawlee/http'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/http
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: HttpCrawler — plain HTTP crawling with no DOM parsing.
+    source: https://registry.npmjs.org/@crawlee/http
+  - name: '@crawlee/cheerio'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/cheerio
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: CheerioCrawler — HTTP crawling with Cheerio server-side DOM parsing.
+    source: https://registry.npmjs.org/@crawlee/cheerio
+  - name: '@crawlee/jsdom'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/jsdom
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: JSDOMCrawler — HTTP crawling with a JSDOM-backed DOM.
+    source: https://registry.npmjs.org/@crawlee/jsdom
+  - name: '@crawlee/linkedom'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/linkedom
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: LinkeDOMCrawler — HTTP crawling with the lighter LinkeDOM parser.
+    source: https://registry.npmjs.org/@crawlee/linkedom
+  - name: '@crawlee/playwright'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/playwright
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    install: npm install crawlee playwright
+    description: >-
+      PlaywrightCrawler and AdaptivePlaywrightCrawler. Playwright itself is a peer install —
+      the docs state "playwright is not bundled with Crawlee" to keep install size down.
+    source: https://registry.npmjs.org/@crawlee/playwright
+  - name: '@crawlee/puppeteer'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/puppeteer
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    install: npm install crawlee puppeteer
+    description: PuppeteerCrawler. Puppeteer is a peer install, not bundled.
+    source: https://registry.npmjs.org/@crawlee/puppeteer
+  - name: '@crawlee/browser'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/browser
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: Shared browser-crawler base used by the Playwright and Puppeteer crawlers.
+    source: https://registry.npmjs.org/@crawlee/browser
+  - name: '@crawlee/browser-pool'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/browser-pool
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: Browser lifecycle and rotation across Playwright/Puppeteer instances.
+    source: https://registry.npmjs.org/@crawlee/browser-pool
+  - name: '@crawlee/stagehand'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/stagehand
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: >-
+      StagehandCrawler — AI-driven crawling via the Stagehand integration, added in
+      Crawlee v3.16.0 (2026-02-06).
+    source: https://registry.npmjs.org/@crawlee/stagehand
+  - name: '@crawlee/impit-client'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/impit-client
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: impit-based HTTP client that impersonates browser TLS/HTTP fingerprints.
+    source: https://registry.npmjs.org/@crawlee/impit-client
+  - name: '@crawlee/memory-storage'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/memory-storage
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: In-memory implementation of the storage interface, Apify-API-shaped.
+    source: https://registry.npmjs.org/@crawlee/memory-storage
+  - name: '@crawlee/fs-storage-native'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/fs-storage-native
+    language: Rust (napi-rs bindings for Node.js)
+    official: true
+    version: 0.2.0
+    published: '2026-08-27'
+    description: >-
+      Rust-powered napi-rs bindings for Crawlee's filesystem storage. Versioned
+      independently of the 3.18.x lockstep line; platform-specific binaries are published
+      as @crawlee/fs-storage-native-{darwin,linux,win32}-* at the same version.
+    source: https://registry.npmjs.org/@crawlee/fs-storage-native
+  - name: '@crawlee/cli'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/cli
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: >-
+      The `crawlee` binary — project scaffolding from templates. See cli/crawlee-cli.yml.
+    source: https://registry.npmjs.org/@crawlee/cli
+  - name: '@crawlee/templates'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/templates
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: Project templates consumed by @crawlee/cli.
+    source: https://registry.npmjs.org/@crawlee/templates
+  - name: '@crawlee/utils'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/utils
+    language: JavaScript/TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: Shared utilities used across the crawler packages.
+    source: https://registry.npmjs.org/@crawlee/utils
+  - name: '@crawlee/types'
+    registry: npm
+    url: https://www.npmjs.com/package/@crawlee/types
+    language: TypeScript
+    official: true
+    version: 3.18.1
+    published: '2026-08-12'
+    description: Shared TypeScript types for the Crawlee projects.
+    source: https://registry.npmjs.org/@crawlee/types
+  - name: crawlee
+    registry: pypi
+    url: https://pypi.org/project/crawlee/
+    language: Python
+    official: true
+    version: 1.10.0
+    published: '2026-08-31'
+    install: python -m pip install 'crawlee[all]'
+    requires: '>=3.10'
+    description: >-
+      Crawlee for Python — BasicCrawler, HttpCrawler, BeautifulSoupCrawler, ParselCrawler,
+      PlaywrightCrawler, AdaptivePlaywrightCrawler and FileDownloadCrawler over asyncio,
+      with the same RequestQueue / Dataset / KeyValueStore / SessionPool / ProxyConfiguration
+      model as the JavaScript library.
+    extras:
+      - adaptive-crawler
+      - all
+      - beautifulsoup
+      - cli
+      - curl-impersonate
+      - httpx
+      - otel
+      - parsel
+      - playwright
+      - pydantic-ai
+      - redis
+      - sql-mysql
+      - sql-postgres
+      - sql-sqlite
+      - stagehand
+    source: https://pypi.org/pypi/crawlee/json
+registries_checked:
+  - registry: npm
+    result: hit
+    endpoint: https://registry.npmjs.org/<pkg>
+  - registry: pypi
+    result: hit
+    endpoint: https://pypi.org/pypi/crawlee/json
+  - registry: crates.io
+    result: none
+    note: >-
+      No first-party Crawlee crate. The Rust code that exists ships as prebuilt napi-rs
+      binaries under @crawlee/fs-storage-native-* on npm, not as a published crate.
+  - registry: maven-central
+    result: none
+    note: No JVM distribution — Crawlee targets Node.js and Python only.
+  - registry: nuget
+    result: none
+    note: No .NET distribution.
+  - registry: rubygems
+    result: none
+    note: No Ruby distribution.
+  - registry: packagist
+    result: none
+    note: No PHP distribution.
+  - registry: pkg.go.dev
+    result: none
+    note: No Go distribution.
+currency:
+  javascript_latest: 3.18.1
+  javascript_published: '2026-08-12'
+  javascript_prerelease: 4.0.0-rc.0
+  javascript_prerelease_published: '2026-08-13'
+  python_latest: 1.10.0
+  python_published: '2026-08-31'
+  assessment: >-
+    Both lines are actively released — the JavaScript library shipped 3.18.1 on 2026-08-12
+    with a 4.0.0 release candidate the next day, and the Python library shipped 1.10.0 on
+    2026-08-31. No abandonment signal.
+not_first_party:
+  - name: '@crawlee-cloud/cli'
+    registry: npm
+    version: 1.6.0
+    published: '2026-08-05'
+    official: false
+    note: >-
+      NOT a Crawlee package. Published from github.com/crawlee-cloud/crawlee-cloud (a
+      separate MIT-licensed GitHub org created 2025-12-20, homepage crawlee.cloud), which
+      describes itself as a "self-hosted, open-source platform for running Apify Actors,
+      drop-in compatible with the Apify SDK". It carries the Crawlee name but is not
+      published by Apify or the Crawlee maintainers, so it is recorded here as an
+      ownership exclusion rather than as a Crawlee SDK.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

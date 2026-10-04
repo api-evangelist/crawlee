@@ -11,15 +11,20 @@ description: >-
   utilities for production-grade scraping.
 url: https://raw.githubusercontent.com/api-evangelist/crawlee/refs/heads/main/apis.yml
 deliveryModel:
-  model: unknown
-  open_source: unknown
+  model: self-hosted
+  license: Apache-2.0
+  license_evidence:
+    repo: apify/crawlee
+    spdx: Apache-2.0
+    stars: 25890
+  open_source: true
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: Self-hosted open source · you run it yourself
+  confidence: medium
   source:
-  - repository-unlicensed
-  generated: '2026-08-28'
+  - repository-license
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -34,6 +39,9 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/crawlee.png
+x-docs-platform: docusaurus
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-24
 tags:
   - Apache 2.0
   - Apify
@@ -42,7 +50,7 @@ tags:
   - Harvesting
   - JavaScript
   - Node.js
-  - Open-Source
+  - Open Source
   - Playwright
   - Puppeteer
   - Python
@@ -62,6 +70,7 @@ tags_raw:
   - Python
   - Scraping
   - Web
+  - Open-Source
 created: '2025-02-08'
 modified: '2026-09-07'
 specificationVersion: '0.23'

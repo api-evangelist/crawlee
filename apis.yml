@@ -152,6 +152,12 @@ apis:
       - Python
       - Scraping
 common:
+  - type: Plans
+    url: plans/crawlee-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/crawlee-rate-limits.yml
+  - type: FinOps
+    url: finops/crawlee-finops.yml
   - type: IssueTracker
     url: https://github.com/apify/crawlee/issues
   - type: ContributionGuide

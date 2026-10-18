@@ -54,7 +54,7 @@ tags:
   - Playwright
   - Puppeteer
   - Python
-  - Scraping
+  - Web Scraping
   - Web
 tags_raw:
   - Apache 2.0
@@ -110,6 +110,15 @@ apis:
       - Node.js
       - Playwright
       - Puppeteer
+      - Web Scraping
+      - TypeScript
+    tags_raw:
+      - Browser Automation
+      - Cheerio
+      - JavaScript
+      - Node.js
+      - Playwright
+      - Puppeteer
       - Scraping
       - TypeScript
   - aid: crawlee:crawlee-python-sdk
@@ -142,7 +151,7 @@ apis:
       - Parsel
       - Playwright
       - Python
-      - Scraping
+      - Web Scraping
     tags_raw:
       - Asyncio
       - BeautifulSoup

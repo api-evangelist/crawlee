@@ -1,0 +1,175 @@
+edges:
+- partner_name: npm registry
+  partner: npm
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript)
+  evidence: https://www.npmjs.com/package/@crawlee/basic
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: npm registry (public registry JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@crawlee/basic'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/basic
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/browser'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/browser
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/cheerio'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/cheerio
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/cli'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/cli
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/core'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/core
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/http'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/http
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/impit-client'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/impit-client
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/jsdom'
+      version: 3.18.2
+      released: '2026-09-29'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/jsdom
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/linkedom'
+      version: 3.18.2
+      released: '2026-09-29'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/linkedom
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/memory-storage'
+      version: 3.18.2
+      released: '2026-09-29'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/memory-storage
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/playwright'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/playwright
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/puppeteer'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/puppeteer
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/stagehand'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/stagehand
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/templates'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/templates
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    - name: '@crawlee/types'
+      version: 3.18.2
+      released: '2026-10-15'
+      released_field: modified
+      lapsed: false
+      page: https://www.npmjs.com/package/@crawlee/types
+      repo_leg: domain:crawlee.dev
+      publisher_leg: org:crawlee
+      matched_by: domain
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months'
+    detected_by: sweep-official-sdks.py
+    detected: '2026-10-18'
+  detected_by: sweep-official-sdks.py
+  first_seen: '2026-10-18'
+generated: '2026-10-18'
+method: searched
+source:
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
+checked:
+- https://api.nuget.org/v3
+- https://crates.io/api/v1
+- https://proxy.golang.org
+- https://pypi.org/pypi
+- https://registry.npmjs.org
+- https://repo1.maven.org/maven2
+- https://rubygems.org/api/v1
